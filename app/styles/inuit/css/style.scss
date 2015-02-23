@@ -1,0 +1,362 @@
+/* Black Tints */
+$tint-b-0: rgba(0,0,0,0);
+$tint-b-2: rgba(0,0,0,0.02);
+$tint-b-3: rgba(0,0,0,0.02);
+$tint-b-5: rgba(0,0,0,0.05);
+$tint-b-10: rgba(0,0,0,0.1);
+$tint-b-20: rgba(0,0,0,0.2);
+$tint-b-30: rgba(0,0,0,0.3);
+$tint-b-40: rgba(0,0,0,0.4);
+$tint-b-50: rgba(0,0,0,0.5);
+$tint-b-60: rgba(0,0,0,0.6);
+$tint-b-70: rgba(0,0,0,0.7);
+$tint-b-80: rgba(0,0,0,0.8);
+$tint-b-90: rgba(0,0,0,0.9);
+$tint-b-100: rgba(0,0,0,1);
+
+/* White Tints */
+$tint-w-0: rgba(255,255,255,0);
+$tint-w-2: rgba(255,255,255,0.02);
+$tint-w-3: rgba(255,255,255,0.02);
+$tint-w-5: rgba(255,255,255,0.05);
+$tint-w-10: rgba(255,255,255,0.1);
+$tint-w-20: rgba(255,255,255,0.2);
+$tint-w-30: rgba(255,255,255,0.3);
+$tint-w-40: rgba(255,255,255,0.4);
+$tint-w-50: rgba(255,255,255,0.5);
+$tint-w-60: rgba(255,255,255,0.6);
+$tint-w-70: rgba(255,255,255,0.7);
+$tint-w-80: rgba(255,255,255,0.8);
+$tint-w-90: rgba(255,255,255,0.9);
+$tint-w-100: rgba(255,255,255,1);
+
+$main-bg:                    #f9f9f9;
+$content-bg:                 #ffffff;
+$brand-primary-color:        #f43059;
+$brand-primary-color-darker: #ee9626;
+$link-color:                 #f43059;
+$lightest-grey:              #faf9fa;
+$base-color-1:               #f5d361; //yellow
+$dark-theme-heading-color:   #fff;
+$base-border-color:          #ccc;
+$input-focus-color:        $brand-primary-color;
+
+/* btns */
+$primary-btn-bg:           $brand-primary-color;
+$primary-btn-bg-hover:     $brand-primary-color-darker;
+$primary-btn-color:        $tint-w-100;
+
+/*layout*/
+$huge-height: 100px;
+
+/* misc */
+$twitter-blue: #4099FF;
+$tumblr-blue: #2c4762;
+
+@import "vars";
+@import "inuit.css/inuit";
+@import "theme/base/csswizardry_grids";
+@import "theme/base/scroller";
+@import "theme/base/dot_nav";
+@import "theme/base/icomoon";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+*{
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+html, body, body>.ember-view {
+	height: 100%;
+}
+
+body{
+	background-color: $main-bg;
+}
+
+h1{font-size: 1.4rem;}
+h2{font-size: 1.3rem;}
+
+h1{
+	margin-bottom: 10px;
+	color: $tint-b-40;
+}
+
+p{
+	margin-bottom: 20px;
+	font-size: 16px;
+	color: $tint-b-70;
+	font-weight: 300;
+}
+
+a{
+	text-decoration: none;
+	color: $brand-primary-color;
+}
+
+
+input[type="text"]{
+	width: 100%;
+	outline: none;
+	border: 1px solid $base-border-color;
+	font-weight: 100;
+	line-height: 1.6rem;
+	padding-left: 6px;
+	color: $tint-b-40;
+	border-radius: 2px;
+	&:focus{
+		border-color: $input-focus-color;
+	}
+}
+
+iframe.full-screen-video, div.full-screen-video {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+	 left: 0;
+	 .controls{
+	 	position: absolute;
+		z-index: 2;
+		color: $tint-w-50;
+		font-size: 4rem;
+		&:hover{
+			color: $brand-primary-color;
+			cursor: pointer;
+		}
+	 }
+}
+
+.video-strip{
+	img{width:100%;}
+}
+
+.center{
+	display: block;
+	margin: 0 auto;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.footer{
+	background-color: $brand-primary-color;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+	
+
+.circle{
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.vimeo-video{
+	margin-bottom: 10rem;
+}
+
+.img-with-title{
+	position: relative;
+	cursor: pointer;
+	&:hover{
+		.title{
+			display: block;
+		}
+	}
+	.title{
+		display: none;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;	
+		background: $tint-b-60;
+		.title__text{
+			@extend .text--center;
+			display: block;
+			color: white;
+			font-weight: 100;
+			position: relative;
+			top: 50%;
+			margin-top: 0px;
+			opacity: 0;
+		}
+	}
+	.title__text--animation{
+		margin-top: -10px !important;
+		opacity: 1 !important;
+		-webkit-transition: all 0.3s ease-out;
+	    -moz-transition: all 0.3s ease-out;
+	    -o-transition: all 0.3s ease-out;
+	    transition: all 0.3s ease-out;
+	}
+}
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
+
+.spinner{
+	display: none;
+	margin: 0 auto;
+}
+
+ul.no-style{
+	list-style: none;
+	margin: 0;
+}
+
+.linked-list{
+	li{
+		cursor:pointer;
+		ul{
+			@extend .push-half--left;
+			color: $tint-b-50;
+		}	
+	}
+}
+
+li.current{
+	color: $link-color;
+}
+
+.video-strip{
+	
+}
+
+.sticky-wrapper{
+	.stuck{
+		position: fixed;
+		top: 20px;
+	}
+}
+
+.icon-med{
+	font-size: 3rem; 
+	&:before{
+		top: 15px;
+		position: relative;
+	}
+}
+
+.accordion-item{
+	.accordion-body{
+		overflow: hidden;
+	}
+}
+
+.hide{
+	display: none;
+}
+
+.cover{	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.cover-main{
+	background: url(/images/main_bg.jpg) no-repeat center center; 
+}
+
+.cover-footer{
+	background: url(/images/grassy_spot.jpg) no-repeat center center; 
+}
+
+.vertical-and-horizontal-center {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 500px;
+   height: 500px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+}
+
+.full-page{
+	position: relative;
+}
+
+.advance-page-link{
+	display: inline-block;
+	font-size: 6rem;
+	position: absolute;
+	bottom: 20px;
+	cursor: pointer;
+	&:before{
+		left: -10%;
+		position: relative;
+	}
+}
+
+.vertical-align{
+	@include vertical-align;
+}
+
+.push-top--huge{
+	margin-top: $huge-height;
+}
+
+.push-bottom--huge{
+	margin-bottom: $huge-height;
+}
+
+.grey-bg{
+	background-color: $tint-b-3;
+}
+
+.on-dark{
+	color: white;
+	h1,h2,h3,h4,p,li, a{
+		color: white;
+	}
+	.btn{
+		border-color: white;
+	}
+}
+
+.btn{
+	border: 1px solid;
+}
+
+.light-font{
+	font-weight: 300;
+}
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.bg-video{
+	position: fixed; 
+	right: 0; 
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
+	width: auto; 
+	height: auto; 
+	z-index: -100;
+	background-size: cover;
+	@include vendor(transform, scale(1.3,1.3));
+	display: none;
+}
+
+
+

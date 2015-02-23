@@ -1,0 +1,17 @@
+{{#unless isWatching}}
+	{{#with data}}
+		<div class="img-with-title">
+			<img {{bind-attr src=thumbnail_large}} class="center main-thumb"/>
+			<div class="title">
+				<h1 class="title__text">{{title}}</h1>
+			</div>
+		</div>
+	{{/with}}
+{{else}}
+	<div class="video">
+		{{{video}}}
+	</div>
+{{/unless}}
+<div class="spinner">
+	<img src="/images/loading.png" />
+</div>

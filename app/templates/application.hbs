@@ -1,3 +1,95 @@
-<h2 id="title">This is happening</h2>
+{{#full-page backgroundVideo=true videoId='XSqlXqv856A'}}
+	{{!-- <video autoplay loop style="width: 100%; height: 100%;">
+		<source src="/videos/TIH_BG_1-Festival.mp4" type="video/mp4">
+	</video> --}}
+	<div class="vertical-and-horizontal-center" style="opacity: 0.8;">
+		<img class="push--top" src="/images/logo3.svg" width="500" />
+		<p class="text--center">
+			<a class="on-dark" href="mailto:email@thisishappening.tv">email@thisishappening.tv</a>
+		</p>
+	</div>
+{{/full-page}}
+{{!-- <span id="footer-waypoint-trigger"></span>
+<div class="wrapper">
+	<div class="push-top--huge">
+		<div class="grid grid--full">
+			<div class="grid__item desk--one-quarter lap--one-quarter palm--one-whole">
+				<div id="main-nav" class="soft--left soft--right">
+					<img id="side-bar-logo" class="push--bottom" src="/images/logo3.svg" />
+					<h2 class="with-icon with-icon-left icon-uniE603 push-half--bottom">Work</h2>
+					{{#accor-dion isReady=isVideoDataLoaded}}
+						<ul class="no-style linked-list">
+							{{#each videos}}
+								{{#if isAccordion}}
+									<li {{bind-attr id=_id}} class="accordion-item">{{title}}
+										<ul class="no-style accordion-body">
+											{{#each data}}
+												<li {{bind-attr id=_id}} {{action 'goToVideo' this}}>{{title}}</li>
+											{{/each}}
+										</ul>
+									</li>
+								{{else}}
+									<li {{bind-attr id=_id}} {{action 'goToVideo' this}}>{{title}}</li>
+								{{/if}}
+							{{/each}}
+						</ul>
+					{{/accor-dion}}
+				</div>
+			</div><!--	
+			--><div class="grid__item desk--two-thirds lap--two-thirds palm--one-whole video-strip">
+				<div class="islet">
+					{{#each videos}}
+						{{#if isAccordion}}
+							{{#each data}}
+								<span {{bind-attr class=_id}}></span>
+								{{vimeo-player vimeoId=data.id}}
+							{{/each}}
+						{{else}}
+							<span {{bind-attr class=_id}}></span>
+							{{vimeo-player vimeoId=data.id}}
+							
+						{{/if}}
+					{{/each}}
+				</div>
+			</div>
+		</div>
 
-{{outlet}}
+		{{outlet}}		
+	</div>
+</div>
+<div class="footer hide on-dark cover cover-footer">
+	<div class="cf">
+		<ul class="social-icons float--right nav nav--block light-font">
+			<li class="cursor-pointer push--right" {{action 'showAbout' target=view}}>
+				About
+			</li>
+			<li><a href="mailto:email@thisishappening.tv">email@thisishappening.tv</a></li>
+		</ul>
+	</div>
+	<div id="about-us" class="hide">
+		<div class="push-bottom--huge">
+			<div class="grid grid--full grid--center">
+				<div class="grid__item desk--one-quarter lap--one-quarter palm--one-whole">
+					<div class="circle">
+						<img src="/images/profile_pic.jpg" />
+					</div>
+				</div>
+			</div>
+			<div class="grid grid--full grid--center">
+				<div class="grid__item desk--one-third lap--one-half palm--one-whole">
+					<div class="push--left push--right">
+						<div class="island hard--top">
+							<p>We are Andrew Franks and Kyle Seago, two Seattle-based directors, editors, cinematographers and producers. We work together to create unique content centered around music, art, and culture.</p>
+							<p>Our work preserves and presents the stories behind those moments where you can’t believe This is Happening.</p>
+							<ul class="no-style nav">
+								<li><a href="http://vimeo.com/thisishappening" class="icon-med icon-uniE604 push-half--right"></a></li>
+								<li class="btn light-font" {{action 'showAbout' target=view}}>Close</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ --}}
